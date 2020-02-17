@@ -29,8 +29,8 @@ script:
 - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- docker tag my_docker_reposetory/swagger_server my_docker_reposetory/swagger_server
-- docker push my_docker_reposetory/swagger_server
+- docker tag svanderwoude/dopcs-assignment2 svanderwoude/dopcs-assignment2
+- docker push svanderwoude/dopcs-assignment2
 env:
   global:
   - secure: AzW/lLwbnxJr7P81UiR5270ibc0zVCeoImmWQUXivlU2hWWtGX1fkRonn6SroIOqvgy4LmPqom4BqGri1fyi872cAMOHXLAol6hdIY9pUdPAzvX7lIXZ0Xme9r1eMV/E64q3zxbo3xvREFSCKTOBhT+L2BhLe9BJgbCIWERZmW6xeyHAvo5OoRYsNxxf+nx5+FfUdRJ2dRzzFMo6hAL1pNjwQZuEm4J2IQpiSinlOERwlV9cy8ooO7rOI3GinVZuKZz6L+yO0TultZ8xmUAjUTNSTIPzgPHrpJNB38CkbTpzriqZzCGBm82eCS9FSQe2BxN/h6e9B/t0JN+fzWRvPfGSKkswauPDBzSlG4/p9gZ2EeKHXXIeKvo3kMUsyAXkbooenmntNXgPGxDPX/9epAbQSZ5zG4iziVX5sj2aTAbCHaGQvobBEfXEtBAFDhwjarmEjYAEHs6ZDgh95lQdTaaN1FiphQKBeg1+ofCttTk9wpZ55OXDorVtDdEULfFCthbENZ8+IZ/g4B4+ZOu5QsztJDHC6/x2GvhLq/2Q+JJhk3NzkSaqGTy/egxAE/emPK9F8UQ9BZ0cCY02o0I2cnaf3yuGGSHJMaQE9lB6paBGq9P2Dl/uhJY8kB4pV6AhZCVVSKpI6XFMaSJV+uUMjtG8/aDUtBF3voaHhPu0W9A=

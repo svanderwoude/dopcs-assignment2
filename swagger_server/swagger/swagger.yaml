@@ -94,10 +94,6 @@ paths:
 definitions:
   Student:
     type: "object"
-    required:
-    - "first_name"
-    - "last_name"
-    - "student_name"
     properties:
       student_name:
         type: "integer"

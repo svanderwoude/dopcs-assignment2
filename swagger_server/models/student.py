@@ -75,8 +75,6 @@ class Student(Model):
         :param student_name: The student_name of this Student.
         :type student_name: int
         """
-        if student_name is None:
-            raise ValueError("Invalid value for `student_name`, must not be `None`")  # noqa: E501
 
         self._student_name = student_name
 
@@ -98,8 +96,6 @@ class Student(Model):
         :param first_name: The first_name of this Student.
         :type first_name: str
         """
-        if first_name is None:
-            raise ValueError("Invalid value for `first_name`, must not be `None`")  # noqa: E501
 
         self._first_name = first_name
 
@@ -121,8 +117,6 @@ class Student(Model):
         :param last_name: The last_name of this Student.
         :type last_name: str
         """
-        if last_name is None:
-            raise ValueError("Invalid value for `last_name`, must not be `None`")  # noqa: E501
 
         self._last_name = last_name
 
