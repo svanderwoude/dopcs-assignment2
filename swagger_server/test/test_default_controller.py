@@ -21,7 +21,7 @@ class TestDefaultController(BaseTestCase):
         body.last_name = names.get_last_name()
         body.grades = {'math': 8, 'history': 9}
         response = self.client.open(
-            '/service-api/student',
+            '/service-api/student/',
             method='POST',
             data=json.dumps(body),
             content_type='application/json')
@@ -38,7 +38,7 @@ class TestDefaultController(BaseTestCase):
         body.last_name = names.get_last_name()
         body.grades = {'math': 8, 'history': 9}
         response = self.client.open(
-            '/service-api/student',
+            '/service-api/student/',
             method='POST',
             data=json.dumps(body),
             content_type='application/json')
@@ -65,7 +65,7 @@ class TestDefaultController(BaseTestCase):
         body.last_name = names.get_last_name()
         body.grades = {'math': 8, 'history': 9}
         response = self.client.open(
-            '/service-api/student',
+            '/service-api/student/',
             method='POST',
             data=json.dumps(body),
             content_type='application/json')
@@ -86,9 +86,19 @@ class TestDefaultController(BaseTestCase):
 
         Find student by last name
         """
+        body = Student()
+        body.first_name = names.get_first_name()
+        body.last_name = 'last_name_example'
+        body.grades = {'math': 8, 'history': 9}
+        response = self.client.open(
+            '/service-api/student/',
+            method='POST',
+            data=json.dumps(body),
+            content_type='application/json')
+
         query_string = [('last_name', 'last_name_example')]
         response = self.client.open(
-            '/service-api/student',
+            '/service-api/student/',
             method='GET',
             query_string=query_string)
         self.assert200(response,
